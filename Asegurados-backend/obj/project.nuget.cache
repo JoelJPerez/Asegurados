@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uhhwyw+Q3Kw=",
+  "dgSpecHash": "2uyx04sJ84Y=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Windows.10-1809\\Desktop\\Asegurados\\Asegurados-backend\\Asegurados-backend.csproj",
+  "projectFilePath": "C:\\Users\\Windows.10-1809\\Desktop\\Asegurados\\asegurados-backend\\Asegurados-backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Windows.10-1809\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Windows.10-1809\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
