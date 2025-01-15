@@ -1,0 +1,6 @@
+@Asegurados_backend_HostAddress = http://localhost:5243
+
+GET {{Asegurados_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
