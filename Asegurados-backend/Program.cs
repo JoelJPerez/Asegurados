@@ -1,4 +1,4 @@
-using AseguradosAPI.Data;
+using Asegurados.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
