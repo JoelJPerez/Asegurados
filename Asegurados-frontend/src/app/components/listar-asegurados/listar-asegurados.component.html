@@ -1,1 +1,40 @@
-<p>listar-asegurados works!</p>
+<div class="container">
+    <h1>Lista de Asegurados</h1>
+    <input type="text" placeholder="Buscar por Número de Identificación" [(ngModel)]="filtroIdentificacion" (input)="filtrarAsegurados()">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre Completo</th>
+          <th>Teléfono</th>
+          <th>Email</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let asegurado of aseguradosFiltrados | paginate: { itemsPerPage: 10, currentPage: page }; let i = index">
+          <td>{{ (page - 1) * 10 + i + 1 }}</td>
+          <td *ngIf="!asegurado.editing">{{ asegurado.primerNombre }} {{ asegurado.primerApellido }}</td>
+          <td *ngIf="asegurado.editing">
+            <input [(ngModel)]="asegurado.primerNombre" placeholder="Primer Nombre">
+            <input [(ngModel)]="asegurado.primerApellido" placeholder="Primer Apellido">
+          </td>
+          <td *ngIf="!asegurado.editing">{{ asegurado.telefonoContacto }}</td>
+          <td *ngIf="asegurado.editing">
+            <input [(ngModel)]="asegurado.telefonoContacto" placeholder="Teléfono">
+          </td>
+          <td *ngIf="!asegurado.editing">{{ asegurado.email }}</td>
+          <td *ngIf="asegurado.editing">
+            <input [(ngModel)]="asegurado.email" placeholder="Email">
+          </td>
+          <td>
+            <button *ngIf="!asegurado.editing" (click)="editarAsegurado(asegurado)">Editar</button>
+            <button *ngIf="asegurado.editing" (click)="guardarAsegurado(asegurado)">Guardar</button>
+            <button (click)="eliminarAsegurado(asegurado.numeroIdentificacion)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    <button routerLink="/crear">Crear Nuevo Asegurado</button>
+  </div>
