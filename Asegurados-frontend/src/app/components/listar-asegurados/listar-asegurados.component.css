@@ -1,0 +1,87 @@
+/* Estilos de la tabla */
+.container {
+  max-width: 1200px;
+  margin: 20px auto; /* Margen superior e inferior para separación */
+  padding: 20px;
+  font-family: sans-serif; /* Fuente consistente */
+  background-color: #fff; /* Fondo blanco */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #3c4858; /* Color del encabezado */
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f5f5f5; /* Fondo claro para el input */
+  color: #333; /* Color del texto del input */
+  outline: none;
+}
+
+/* Estilos de la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border-radius: 5px; /* Bordes redondeados para la tabla */
+  overflow: hidden; /* Evita que los bordes de las celdas sobresalgan */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para la tabla */
+}
+
+thead {
+  background-color: #3c4858; /* Color de la cabecera */
+  color: white;
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd; /* Separador entre filas */
+}
+
+th {
+  font-weight: 500; /* Grosor de fuente más ligero para los encabezados */
+}
+
+tbody tr:nth-child(even) { /* Filas pares con fondo ligeramente gris */
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #e0e0e0; /* Color de hover más suave */
+}
+
+button {
+  padding: 8px 16px; /* Aumentar padding horizontal */
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+  outline: none;
+}
+
+button[ng-reflect-ng-if="true"] { /* Botón "Editar/Guardar" */
+  background-color: #2ecc71; /* Verde */
+  color: white;
+}
+
+button[ng-reflect-ng-if="false"] { /* Botón "Eliminar" */
+  background-color: #e74c3c; /* Rojo */
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}

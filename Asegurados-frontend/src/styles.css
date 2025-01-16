@@ -1,4 +1,83 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+}
+
+/* Estilos para la paginación (adaptados a ngx-pagination) */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination-controls .ngx-pagination {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+  }
+  
+  .pagination-controls .ngx-pagination li {
+    margin: 0 5px;
+  }
+  
+  .pagination-controls .ngx-pagination li span, /* Estilos para los <span> (números y texto) */
+  .pagination-controls .ngx-pagination li a { /* Estilos para los <a> (enlaces) */
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    display: inline-block; /* Para que el padding funcione correctamente */
+  }
+  
+  .pagination-controls .ngx-pagination li.current span { /* Estilo para la página actual */
+    background-color: #3c4858;
+    color: white;
+    border-color: #3c4858;
+    cursor: default; /* Quitar el cursor de pointer en la página actual */
+  }
+  
+  .pagination-controls .ngx-pagination li.disabled span { /* Estilo para "Anterior" y "Siguiente" deshabilitados */
+    color: #ccc;
+    cursor: default;
+    border-color: #eee;
+  }
+  
+  .pagination-controls .ngx-pagination li a:hover {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+  }
+  
+  /* Estilos específicos para "Anterior" y "Siguiente" (opcional) */
+  .pagination-controls .ngx-pagination li.pagination-previous a,
+  .pagination-controls .ngx-pagination li.pagination-next a {
+    padding: 8px 16px;
+  }
+  
+  /* Estilos para pantallas pequeñas (opcional) */
+  .pagination-controls .ngx-pagination li.small-screen{
+    display: none; /* Ocultar en pantallas medianas y grandes */
+  }
+  
+  @media (max-width: 768px) { /* Ejemplo de breakpoint para móvil */
+    .pagination-controls .ngx-pagination li.small-screen {
+        display: block; /* Mostrar solo en pantallas pequeñas */
+        margin: 0 auto; /* Centrar en pantallas pequeñas */
+        padding: 10px;
+    }
+    .pagination-controls .ngx-pagination li{
+        display: none;
+    }
+    .pagination-controls .ngx-pagination li.pagination-previous,
+    .pagination-controls .ngx-pagination li.pagination-next{
+        display: block;
+    }
+  }

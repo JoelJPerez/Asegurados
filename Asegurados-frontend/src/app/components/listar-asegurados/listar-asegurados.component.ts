@@ -17,6 +17,7 @@ export class ListarAseguradosComponent implements OnInit {
   aseguradosFiltrados: Asegurado[] = []; 
   filtroIdentificacion: string = '';
   page: number = 1;
+  pageSize: number = 10;
 
   constructor(private aseguradoService: AseguradoService) {}
 
@@ -25,7 +26,7 @@ export class ListarAseguradosComponent implements OnInit {
   }
 
   obtenerAsegurados(): void {
-    this.aseguradoService.getAsegurados(1, 10).subscribe(
+    this.aseguradoService.getAsegurados(this.page, this.pageSize).subscribe(
       (data) => {
         this.asegurados = data;
         this.aseguradosFiltrados = [...data]; // Inicializa la lista filtrada con todos los asegurados
@@ -67,7 +68,7 @@ export class ListarAseguradosComponent implements OnInit {
   }
 
   filtrarAsegurados(): void {
-    if (this.filtroIdentificacion) { 
+    if (this.filtroIdentificacion.trim()) { 
       this.aseguradosFiltrados = this.asegurados.filter((asegurado) => 
         asegurado.numeroIdentificacion.toString().includes(this.filtroIdentificacion) 
       ); 
@@ -77,4 +78,10 @@ export class ListarAseguradosComponent implements OnInit {
     
     this.page = 1;
   }
+
+  pageChange(newPage: number): void {
+    this.page = newPage; // Actualizar la página actual
+    this.obtenerAsegurados(); // Cargar asegurados de la nueva página
+  }
+  
 }

@@ -1,0 +1,43 @@
+/* Estilos del header y la navegación */
+header {
+    background-color: #3c4858; /* Color de fondo del header (mismo que encabezados) */
+    padding: 10px 0; /* Espaciado vertical */
+    color: white; /* Color del texto */
+}
+
+nav {
+    max-width: 1200px; /* Ancho máximo del navegador (igual que el contenedor) */
+    margin: 0 auto; /* Centrar el navegador */
+    padding: 0 20px; /* Espaciado horizontal */
+}
+
+nav ul {
+    list-style: none; /* Quitar los puntos de la lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para que los elementos estén en línea */
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px; /* Espaciado entre elementos de la lista */
+}
+
+nav a {
+    text-decoration: none; /* Quitar el subrayado de los enlaces */
+    color: white;
+    padding: 8px 12px; /* Espaciado interno del enlace */
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Transiciones suaves */
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo con transparencia al pasar el mouse */
+    color: #2ecc71; /* Verde al pasar el mouse */
+}
+
+nav a.active { /* Estilo para el enlace activo */
+    background-color: #2ecc71; /* Fondo verde para el enlace activo */
+    color: white;
+    font-weight: bold;
+}

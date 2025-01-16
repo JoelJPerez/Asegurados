@@ -1,0 +1,89 @@
+/* Estilos del formulario */
+
+.container {
+  max-width: 400px; /* Reducir el ancho máximo */
+  margin: 50px auto; /* Ajustar el margen superior para centrar verticalmente */
+  padding: 20px;
+  font-family: sans-serif; /* Fuente más moderna */
+  background-color: #282c34; /* Fondo oscuro como en la imagen */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  color: #fff; /* Texto blanco para contraste */
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px; /* Más espacio debajo del título */
+  font-size: 1.8em; /* Tamaño de fuente relativo */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-weight: 500; /* Grosor de fuente más ligero */
+  margin-bottom: 5px;
+  display: block;
+  color: #abb2bf; /* Color de etiqueta grisáceo */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px 12px; /* Reducir el padding */
+  border: none; /* Sin borde */
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #3e4451; /* Fondo más oscuro para los inputs */
+  color: #fff; /* Texto blanco en los inputs */
+  outline: none; /* Quitar el borde al hacer focus */
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px; /* Altura mínima para el textarea */
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button[type="submit"] {
+  background-color: #52b788; /* Verde más moderno */
+  color: white;
+}
+
+button[routerLink] {
+  background-color: #e0e0e0; /* Gris claro para cancelar */
+  color: #333;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:focus {
+  outline: none;
+}
+/* Estilos adicionales para mejorar la apariencia */
+.container::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background: linear-gradient(to right, #52b788, #2ecc71); /* Barra verde superior */
+  margin-bottom: 20px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
