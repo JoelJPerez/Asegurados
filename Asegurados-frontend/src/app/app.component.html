@@ -1,2 +1,11 @@
-
-<router-outlet />
+<header>
+    <nav>
+      <ul>
+          <li><a routerLink="/asegurados" routerLinkActive="active">Lista de Asegurados</a></li>
+          <li><a routerLink="/crear" routerLinkActive="active">Crear Asegurado</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>

@@ -1,0 +1,43 @@
+<div class="container">
+    <h1>Registrar Asegurado</h1>
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+      <div>
+        <label for="primerNombre">Primer Nombre:</label>
+        <input type="text" id="primerNombre" required [(ngModel)]="asegurado.primerNombre" name="primerNombre" />
+      </div>
+      <div>
+        <label for="segundoNombre">Segundo Nombre:</label>
+        <input type="text" id="segundoNombre" required [(ngModel)]="asegurado.segundoNombre" name="segundoNombre" />
+      </div>
+      <div>
+        <label for="primerApellido">Primer Apellido:</label>
+        <input type="text" id="primerApellido" required [(ngModel)]="asegurado.primerApellido" name="primerApellido" />
+      </div>
+      <div>
+        <label for="segundoApellido">Segundo Apellido:</label>
+        <input type="text" id="segundoApellido" required [(ngModel)]="asegurado.segundoApellido" name="segundoApellido" />
+      </div>
+      <div>
+        <label for="telefonoContacto">Telefono de Contacto:</label>
+        <input type="text" id="telefonoContacto" required [(ngModel)]="asegurado.telefonoContacto" name="telefonoContacto" />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required [(ngModel)]="asegurado.email" name="email" />
+      </div>
+      <div> 
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label> 
+        <input type="date" id="fechaNacimiento" required [(ngModel)]="asegurado.fechaNacimiento" name="fechaNacimiento" /> 
+      </div>
+      <div> 
+        <label for="valorEstimadoSeguro">Valor Estimado del Seguro:</label> 
+        <input type="number" id="valorEstimadoSeguro" required [(ngModel)]="asegurado.valorEstimadoSeguro" name="valorEstimadoSeguro" /> 
+      </div> 
+      <div> 
+        <label for="observaciones">Observaciones:</label> 
+        <textarea id="observaciones" [(ngModel)]="asegurado.observaciones" name="observaciones"></textarea> 
+      </div>
+      <button type="submit" [disabled]="!form.valid">Guardar</button>
+      <button routerLink="/asegurados">Cancelar</button>
+    </form>
+</div>
