@@ -5,28 +5,70 @@
       <thead>
         <tr>
           <th>#</th>
+          <th>Número de Identificación</th>
           <th>Nombre Completo</th>
           <th>Teléfono</th>
           <th>Email</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Valor Estimado del Seguro</th>
+          <th>Observaciones</th>
           <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let asegurado of aseguradosFiltrados | paginate: { itemsPerPage: 10, currentPage: page }; let i = index">
+          
+          <!-- Índice -->
           <td>{{ (page - 1) * 10 + i + 1 }}</td>
-          <td *ngIf="!asegurado.editing">{{ asegurado.primerNombre }} {{ asegurado.primerApellido }}</td>
-          <td *ngIf="asegurado.editing">
-            <input [(ngModel)]="asegurado.primerNombre" placeholder="Primer Nombre">
-            <input [(ngModel)]="asegurado.primerApellido" placeholder="Primer Apellido">
+
+          <!-- Número de Identificación -->
+          <td>{{ asegurado.numeroIdentificacion }}</td>
+
+          <!-- Nombre Completo -->
+          <td *ngIf="!asegurado.editing">
+            {{ asegurado.primerNombre }}
+            {{ asegurado.segundoNombre || '' }}
+            {{ asegurado.primerApellido }}
+            {{ asegurado.segundoApellido }}
           </td>
+          <td *ngIf="asegurado.editing">
+            <input [(ngModel)]="asegurado.primerNombre" placeholder="Primer Nombre" />
+            <input [(ngModel)]="asegurado.segundoNombre" placeholder="Segundo Nombre" />
+            <input [(ngModel)]="asegurado.primerApellido" placeholder="Primer Apellido" />
+            <input [(ngModel)]="asegurado.segundoApellido" placeholder="Segundo Apellido" />
+          </td>
+
+          <!-- Teléfono -->
           <td *ngIf="!asegurado.editing">{{ asegurado.telefonoContacto }}</td>
           <td *ngIf="asegurado.editing">
             <input [(ngModel)]="asegurado.telefonoContacto" placeholder="Teléfono">
           </td>
+
+          <!-- Email -->
           <td *ngIf="!asegurado.editing">{{ asegurado.email }}</td>
           <td *ngIf="asegurado.editing">
             <input [(ngModel)]="asegurado.email" placeholder="Email">
           </td>
+
+          <!-- Fecha de Nacimiento -->
+          <td *ngIf="!asegurado.editing">{{ asegurado.fechaNacimiento | date }}</td>
+          <td *ngIf="asegurado.editing">
+            <input [(ngModel)]="asegurado.fechaNacimiento" type="date" />
+          </td>
+
+          <!-- Valor Estimado del Seguro -->
+          <td *ngIf="!asegurado.editing">{{ asegurado.valorEstimadoSeguro | currency }}</td>
+          <td *ngIf="asegurado.editing">
+            <input [(ngModel)]="asegurado.valorEstimadoSeguro" type="number" placeholder="Valor del Seguro" />
+          </td>
+
+          <!-- Observaciones -->
+          <td *ngIf="!asegurado.editing">{{ asegurado.observaciones || 'Sin observaciones' }}</td>
+          <td *ngIf="asegurado.editing">
+            <input [(ngModel)]="asegurado.observaciones" placeholder="Observaciones" />
+          </td>
+
+          <!-- Acciones -->
           <td>
             <button *ngIf="!asegurado.editing" (click)="editarAsegurado(asegurado)">Editar</button>
             <button *ngIf="asegurado.editing" (click)="guardarAsegurado(asegurado)">Guardar</button>
@@ -36,5 +78,4 @@
       </tbody>
     </table>
     <pagination-controls (pageChange)="page = $event"></pagination-controls>
-    <button routerLink="/crear">Crear Nuevo Asegurado</button>
   </div>

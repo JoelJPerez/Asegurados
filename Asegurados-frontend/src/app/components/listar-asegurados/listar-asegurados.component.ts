@@ -28,6 +28,7 @@ export class ListarAseguradosComponent implements OnInit {
     this.aseguradoService.getAsegurados(1, 10).subscribe(
       (data) => {
         this.asegurados = data;
+        this.aseguradosFiltrados = [...data]; // Inicializa la lista filtrada con todos los asegurados
       },
       (error) => {
         console.error('Error al obtener los asegurados:', error);
@@ -72,6 +73,8 @@ export class ListarAseguradosComponent implements OnInit {
       ); 
     } else { 
       this.aseguradosFiltrados = [...this.asegurados]; 
-    } 
+    }
+    
+    this.page = 1;
   }
 }

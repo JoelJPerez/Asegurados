@@ -7,7 +7,7 @@ import { Asegurado } from '../models/asegurado';
   providedIn: 'root'
 })
 export class AseguradoService {
-  private apiUrl = 'http://localhost:5043/api/asegurados';
+  private apiUrl = 'http://localhost:5243/api/asegurados';
 
   constructor(private http: HttpClient) { }
 
