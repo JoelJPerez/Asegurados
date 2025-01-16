@@ -167,3 +167,5 @@ C:\Users\Windows.10-1809\Desktop\Asegurados\asegurados-backend\obj\Debug\net9.0\
 C:\Users\Windows.10-1809\Desktop\Asegurados\asegurados-backend\obj\Debug\net9.0\Asegurados-backend.pdb
 C:\Users\Windows.10-1809\Desktop\Asegurados\asegurados-backend\obj\Debug\net9.0\Asegurados-backend.genruntimeconfig.cache
 C:\Users\Windows.10-1809\Desktop\Asegurados\asegurados-backend\obj\Debug\net9.0\ref\Asegurados-backend.dll
+C:\Users\Windows.10-1809\Desktop\Asegurados\asegurados-backend\bin\Debug\net9.0\vscode\launch.json
+C:\Users\Windows.10-1809\Desktop\Asegurados\asegurados-backend\bin\Debug\net9.0\vscode\task.json
