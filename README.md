@@ -39,13 +39,3 @@ Este proyecto es parte de una prueba técnica para desarrollar una solución bas
 - **Estilos**:
   - Diseño responsivo usando CSS puro.
 
----
-
-## **Instalación y Ejecución**
-
-### **Backend**
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/tu-usuario/proyecto-tecnico.git
-
-   Cambiar al directorio del backend:
