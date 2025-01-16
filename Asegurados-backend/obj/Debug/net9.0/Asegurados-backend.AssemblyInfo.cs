@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Asegurados-backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7115ba0514cb264c23cab432240461f4b726cf4f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+37c6c5f2085855c4f2759e0c5c04da8519d36c3b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Asegurados-backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Asegurados-backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
