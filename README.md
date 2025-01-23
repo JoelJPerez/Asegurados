@@ -39,3 +39,5 @@ Este proyecto es parte de una prueba técnica para desarrollar una solución bas
 - **Estilos**:
   - Diseño responsivo usando CSS puro.
 
+### **Despliegue**
+- Visite https://asegurados-8885d.web.app.
