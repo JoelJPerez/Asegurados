@@ -16,15 +16,10 @@ namespace Asegurados.Controllers
             _context = context;
         }
 
-        // Obtener asegurados con paginación
         [HttpGet]
-        public async Task<IActionResult> GetAsegurados([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
+        public async Task<IActionResult> GetAll()
         {
-            var asegurados = await _context.Asegurados
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize)
-                .ToListAsync();
-
+            var asegurados = await _context.Asegurados.ToListAsync();
             return Ok(asegurados);
         }
 
@@ -49,7 +44,7 @@ namespace Asegurados.Controllers
             await _context.Asegurados.AddAsync(asegurado);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetAsegurado), new { id = asegurado.NumeroIdentificacion }, asegurado);
+            return CreatedAtAction(nameof(GetAll), new { id = asegurado.NumeroIdentificacion }, asegurado);
         }
 
         // Actualizar un asegurado
