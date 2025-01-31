@@ -69,9 +69,21 @@ export class ListarAseguradosComponent implements OnInit {
 
   filtrarAsegurados(): void {
     if (this.filtroIdentificacion.trim()) { 
-      this.aseguradosFiltrados = this.asegurados.filter((asegurado) => 
-        asegurado.numeroIdentificacion.toString().includes(this.filtroIdentificacion) 
-      ); 
+      const id = parseInt(this.filtroIdentificacion, 10);
+      if (!isNaN(id)) {
+        this.aseguradoService.getAseguradoById(id).subscribe(
+          (data) => {
+            this.aseguradosFiltrados = [data];
+          },
+          (error) => {
+            console.error('Error al obtener el asegurado:', error);
+            this.aseguradosFiltrados = [];
+          }
+        );
+      }
+      else {
+        this.aseguradosFiltrados = [];
+      }
     } else { 
       this.aseguradosFiltrados = [...this.asegurados]; 
     }
