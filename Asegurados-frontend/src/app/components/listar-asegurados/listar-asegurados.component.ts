@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { AseguradoService } from '../../services/asegurado.service';
 import { Asegurado } from '../../models/asegurado';
 
 @Component({
   selector: 'app-listar-asegurados',
-  imports: [CommonModule, FormsModule, NgxPaginationModule],
+  imports: [CommonModule, FormsModule, NgxPaginationModule, MatPaginatorModule],
   templateUrl: './listar-asegurados.component.html',
   styleUrls: ['./listar-asegurados.component.css'],
   standalone: true,
@@ -17,24 +18,23 @@ export class ListarAseguradosComponent implements OnInit {
   aseguradosFiltrados: Asegurado[] = []; 
   filtroIdentificacion: string = '';
   page: number = 1;
-  pageSize: number = 10;
 
   constructor(private aseguradoService: AseguradoService) {}
 
   ngOnInit(): void {
-    this.obtenerAsegurados();
+    this.listarAsegurados();
   }
 
-  obtenerAsegurados(): void {
-    this.aseguradoService.getAsegurados(this.page, this.pageSize).subscribe(
-      (data) => {
+  listarAsegurados(): void {
+    this.aseguradoService.getAll().subscribe(
+      (data)=> {
         this.asegurados = data;
-        this.aseguradosFiltrados = [...data]; // Inicializa la lista filtrada con todos los asegurados
+        this.aseguradosFiltrados = [...data];
       },
-      (error) => {
+      (error)=> {
         console.error('Error al obtener los asegurados:', error);
       }
-    );
+    )
   }
 
   eliminarAsegurado(id: number): void {
@@ -81,7 +81,7 @@ export class ListarAseguradosComponent implements OnInit {
 
   pageChange(newPage: number): void {
     this.page = newPage; // Actualizar la página actual
-    this.obtenerAsegurados(); // Cargar asegurados de la nueva página
+    this.listarAsegurados(); // Cargar asegurados de la nueva página
   }
   
 }

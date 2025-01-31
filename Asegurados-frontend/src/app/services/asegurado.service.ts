@@ -11,8 +11,8 @@ export class AseguradoService {
 
   constructor(private http: HttpClient) { }
 
-  getAsegurados(page: number, pageSize: number): Observable<Asegurado[]> {
-    return this.http.get<Asegurado[]>(`${this.apiUrl}?page=${page}&pageSize=${pageSize}`);
+  getAll(): Observable<Asegurado[]> {
+    return this.http.get<Asegurado[]>(this.apiUrl);
   }
 
   getAseguradoById(id: number): Observable<Asegurado> {
